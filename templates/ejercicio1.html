@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/estilosEjercicios.css">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+<div class="container">
+    <h1>Cálculo de compras</h1>
+    <form action="/ejercicio1" method="POST">
+        <label for="nombre">Ingresa tu nombre :</label>
+        <input type="text" id="nombre" name="nombre" pattern="[a-zA-Z\s]+" title="Solo se permiten letras y espacios" required>
+        <br>
+        <label for="edad">Ingresa tu edad </label>
+        <input type="number" id="edad" name="edad" min="0" step="1" required>
+        <br>
+         <label for="cantidad_tarros">Ingresa la cantidad de tarros de pintura a comprar </label>
+        <input type="number" id="cantidad_tarros" name="cantidad_tarros" min="0" step="1" required>
+        <br>
+        <button type="submit">Calcular</button>
+    </form>
+     {% if total_pagar %}
+       <div>
+          <p>Nombre del cliente: ${{nombre}}</p>
+          <p>Total sin decuento: ${{total_sin_descuento}}</p>
+          <p>El descuento es: ${{descuento}}</p>
+          <p>El total a pagar es de: ${{total_pagar}}</p>
+       </div>
+    {% endif %}
+</div>
+</body>
+</html>
